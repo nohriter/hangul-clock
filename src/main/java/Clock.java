@@ -18,20 +18,9 @@ public class Clock {
     };
 
 
-    public void getNowTime() {
-        LocalTime localTime = LocalTime.now();
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH mm");
-
-        String formatTime = localTime.format(formatter);
-
-        String[] hourAndMinute = formatTime.split(" ");
-
-        this.hour = hourAndMinute[0];
-        this.minute = hourAndMinute[1];
-    }
-
     public void print() {
+        System.out.println("\n");
+
         getNowTime();
         changeHour();
         changeMinute();
@@ -43,6 +32,19 @@ public class Clock {
             System.out.println();
         }
 
+    }
+
+    public void getNowTime() {
+        LocalTime localTime = LocalTime.now();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH mm");
+
+        String formatTime = localTime.format(formatter);
+
+        String[] hourAndMinute = formatTime.split(" ");
+
+        this.hour = hourAndMinute[0];
+        this.minute = hourAndMinute[1];
     }
 
     private void changeMinute() {
