@@ -1,6 +1,5 @@
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
 public class Clock {
     public static final String ANSI_RESET = "\u001B[0m";
@@ -35,11 +34,11 @@ public class Clock {
     }
 
     public void getNowTime() {
-        LocalTime localTime = LocalTime.now();
+        LocalTime nowTime = LocalTime.now();
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH mm");
 
-        String formatTime = localTime.format(formatter);
+        String formatTime = nowTime.format(formatter);
 
         String[] hourAndMinute = formatTime.split(" ");
 
